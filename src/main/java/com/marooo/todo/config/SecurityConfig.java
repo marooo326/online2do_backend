@@ -26,7 +26,9 @@ public class SecurityConfig {
                 .formLogin(AbstractHttpConfigurer::disable)
                 .httpBasic(AbstractHttpConfigurer::disable)
                 .authorizeRequests(request -> request
-                        .antMatchers("/").permitAll())
+                        .antMatchers("/", "/login").permitAll()
+                        .anyRequest().authenticated()
+                )
                 .addFilterBefore(new NameInputFilter(jwtProvider), UsernamePasswordAuthenticationFilter.class)
                 .getOrBuild();
     }

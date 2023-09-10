@@ -1,7 +1,7 @@
-package com.marooo.todo.controller;
+package com.marooo.todo.auth.controller;
 
 import com.marooo.todo.auth.dto.Jwt;
-import com.marooo.todo.service.AuthService;
+import com.marooo.todo.auth.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;

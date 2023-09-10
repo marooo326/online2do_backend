@@ -1,4 +1,4 @@
-package com.marooo.todo.service;
+package com.marooo.todo.auth.service;
 
 import com.marooo.todo.auth.dto.Jwt;
 import com.marooo.todo.auth.provider.JwtProvider;
