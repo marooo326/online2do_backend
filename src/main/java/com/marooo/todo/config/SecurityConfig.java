@@ -26,7 +26,10 @@ public class SecurityConfig {
                 .formLogin(AbstractHttpConfigurer::disable)
                 .httpBasic(AbstractHttpConfigurer::disable)
                 .authorizeRequests(request -> request
-                        .antMatchers("/", "/login").permitAll()
+                        .antMatchers("/"
+                                , "/login"
+                                , "/swagger-ui/**"
+                                , "/v3/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(new NameInputFilter(jwtProvider), UsernamePasswordAuthenticationFilter.class)
